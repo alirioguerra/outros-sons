@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 // This is the default html and body font-size for the base rem value.
 $rem-base: 16px !default;
 
@@ -11,10 +11,7 @@ $rem-base: 16px !default;
 
   $remValues: ();
   @for $i from 1 through $max {
-    $remValues: append(
-      $remValues,
-      convert-to-rem(nth($values, $i), $base-value)
-    );
+    $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
   }
   @return $remValues;
 }

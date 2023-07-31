@@ -1,11 +1,8 @@
-/* convert to css */
-@charset "utf-8";
-@import './variables';
-@import './mixins';
-@import './fonts';
-@import './reset';
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'reset';
 
-/* main style */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +10,7 @@ html {
 
 body {
   font-family: $font-main;
-  color: $color-white;
+  background-color: $color-background;
   overflow-x: hidden;
 }
 
@@ -24,6 +21,7 @@ section {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -34,4 +32,9 @@ img {
   @media (max-width: 768px) {
     padding: rem-calc(0 15);
   }
+}
+
+h1 {
+  font-weight: 800;
+  font-size: rem-calc(60);
 }

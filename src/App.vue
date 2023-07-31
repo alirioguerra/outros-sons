@@ -1,7 +1,13 @@
-<script setup></script>
+<script setup>
+import MainHeader from '@/components/Mainheader.vue'
+import HomeView from '@/views/HomeView.vue'
+</script>
 
 <template>
-  <h1>Outros sons</h1>
+  <main-header />
+  <main id="pages-wrapper">
+    <HomeView />
+  </main>
 </template>
 
 <style lang="scss"></style>
