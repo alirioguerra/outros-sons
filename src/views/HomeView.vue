@@ -27,9 +27,10 @@
 
 <style lang="scss">
 #home {
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   .row {
     display: flex;
