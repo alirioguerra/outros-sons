@@ -11,6 +11,8 @@
   align-items: center;
   justify-content: flex-start;
   padding: rem-calc(15 30 0 30);
+  opacity: 1;
+  transition: opacity 0.9s ease;
 
   img {
     max-width: rem-calc(100);

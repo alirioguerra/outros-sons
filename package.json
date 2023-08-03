@@ -11,6 +11,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "fullpage.js": "^4.0.20",
     "vue": "^3.3.4"
   },
   "devDependencies": {

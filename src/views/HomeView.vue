@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div id="home" class="container">
+  <div id="home">
     <div class="row">
       <div class="column image">
         <img src="@/assets/images/isotope-grid.png" alt="grid de imagens" />
@@ -27,7 +27,6 @@
 
 <style lang="scss">
 #home {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
