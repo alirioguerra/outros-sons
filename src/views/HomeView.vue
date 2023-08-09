@@ -39,6 +39,7 @@
 
     @media only screen and (max-width: 768px) {
       flex-direction: column;
+      gap: rem-calc(20);
     }
 
     .image {
@@ -57,18 +58,37 @@
       flex-direction: column;
       max-width: rem-calc(580);
 
+      img {
+        display: block;
+
+        @media only screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
       .content {
         margin-bottom: 60px;
 
         h1 {
           color: $color-darken-orange;
           margin-bottom: 30px;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 36px;
+            line-height: 44px;
+            margin-bottom: 15px;
+          }
         }
 
         p {
           font-size: 18px;
           line-height: 22px;
           color: $color-blue;
+
+          @media only screen and (max-width: 768px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
         }
       }
     }

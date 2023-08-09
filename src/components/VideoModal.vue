@@ -15,14 +15,7 @@ defineEmits(['close'])
     <a @click="$emit('close')" href="#" class="close">
       <img src="@/assets/icons/close-button.svg" alt="close" />
     </a>
-    <iframe
-      v-if="props.url"
-      width="100%"
-      height="100%"
-      :src="props.url"
-      frameborder="0"
-      allowfullscreen
-    />
+    <iframe v-if="props.url" width="100%" height="100%" :src="props.url" allowfullscreen />
   </div>
 </template>
 
@@ -39,6 +32,7 @@ defineEmits(['close'])
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
+  aspect-ratio: 16/9;
 
   .close {
     position: absolute;

@@ -11,16 +11,16 @@ defineEmits(['openModal'])
 </script>
 
 <template>
-  <video-modal :active="toggle" :url="props.url" />
+  <video-modal :active="props.url" :url="props.url" />
   <div class="video-container">
+    <div class="text-content">
+      <h2>{{ props.title }}</h2>
+      <p>{{ props.description }}</p>
+    </div>
     <div class="video-wrapper">
       <a @click.prevent="$emit('openModal')" class="play-button" href="#">
         <img src="@/assets/icons/play-button.svg" alt="play" />
       </a>
-      <div class="text-content">
-        <h2>{{ props.title }}</h2>
-        <p>{{ props.description }}</p>
-      </div>
       <img class="cover" :src="props.thumbnail" alt="video thumbnail" />
     </div>
   </div>
@@ -61,6 +61,11 @@ defineEmits(['openModal'])
       &:hover {
         filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
       }
+
+      @media screen and (max-width: 768px) {
+        width: rem-calc(70);
+        height: rem-calc(70);
+      }
     }
     .cover {
       aspect-ratio: 16/9;
@@ -76,6 +81,10 @@ defineEmits(['openModal'])
     padding: 30px;
     transform: translateY(50%);
     z-index: 2;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
 
     h2 {
       opacity: 0;

@@ -13,7 +13,7 @@ let activeUrl = ref('')
 const videos = [
   {
     id: 1,
-    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1',
+    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1&fullscreen=1',
     thumbnail: 'https://img.youtube.com/vi/TlWYgGyNnJo/hqdefault.jpg',
     title: 'Título Video 1',
     description:
@@ -21,7 +21,7 @@ const videos = [
   },
   {
     id: 2,
-    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1',
+    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1&fullscreen=1',
     thumbnail: 'https://img.youtube.com/vi/TlWYgGyNnJo/hqdefault.jpg',
     title: 'Título Video 2',
     description:
@@ -51,6 +51,10 @@ onMounted(() => {
       <HomeView />
     </div>
     <div v-for="video in videos" :key="video.id" class="full-page section">
+      <div class="text-content">
+        <h2>{{ video.title }}</h2>
+        <p>{{ video.description }}</p>
+      </div>
       <VideoView @open-modal="toggleModal(video.url)" v-bind="{ ...video }" />
     </div>
   </main>
@@ -62,6 +66,13 @@ onMounted(() => {
   height: 100vh;
   background-color: $color-background;
   padding: 30px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .fp-watermark {
