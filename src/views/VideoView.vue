@@ -11,7 +11,6 @@ defineEmits(['openModal'])
 </script>
 
 <template>
-  <video-modal :active="props.url" :url="props.url" />
   <div class="video-container">
     <div class="text-content">
       <h2>{{ props.title }}</h2>

@@ -51,14 +51,14 @@ onMounted(() => {
       <HomeView />
     </div>
     <div v-for="video in videos" :key="video.id" class="full-page section">
-      <div class="text-content">
+      <div class="desktop-text">
         <h2>{{ video.title }}</h2>
         <p>{{ video.description }}</p>
       </div>
       <VideoView @open-modal="toggleModal(video.url)" v-bind="{ ...video }" />
     </div>
   </main>
-  <video-modal @close="toggleModal(null)" :active="modal" :url="activeUrl" />
+  <video-modal v-if="modal" @close="toggleModal(null)" :active="modal" :url="activeUrl" />
 </template>
 
 <style lang="scss">
@@ -83,6 +83,14 @@ body:not(.fp-viewing-0) {
   #main-header {
     display: none;
   }
+
+  @media only screen and (max-width: 768px) {
+    .fp-overflow {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
 }
 
 #fp-nav.fp-right {
@@ -91,5 +99,29 @@ body:not(.fp-viewing-0) {
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background-color: $color-darken-orange;
+}
+
+.desktop-text {
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    display: block;
+    margin-bottom: rem-calc(30);
+
+    h2 {
+      font-size: rem-calc(42);
+      font-weight: 700;
+      color: $color-orange;
+      margin-bottom: rem-calc(30);
+    }
+
+    p {
+      max-width: rem-calc(550);
+      font-size: rem-calc(18);
+      line-height: rem-calc(28);
+      font-weight: 400;
+      color: $color-blue;
+    }
+  }
 }
 </style>
