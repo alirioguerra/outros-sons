@@ -8,15 +8,14 @@
       </div>
       <div class="column text">
         <div class="content">
-          <h1>Lorem Ipsum</h1>
+          <h1>Outros Sons</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in
-            hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur,
-            ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-            auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at
-            maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque
-            sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget
-            tempus orci facilisis id.
+            Este é o projeto “Outros sons”, um webdocumentário que aborda a acessibilidade surda em
+            quatro temas: Saúde, Esporte, Cultura e Educação. Cada um dos assuntos é explorado em um
+            episódio próprio. Nesse site você pode navegar entre os conteúdos com interatividade, ao
+            explorar a página. O objetivo é que você conheça as principais demandas da comunidade
+            surda e não ouvinte e passe a ter conhecimento das reivindicações de demandas públicas e
+            sociais provocadas pela falta de acessibilidade.
           </p>
         </div>
         <img src="@/assets/icons/arrow-down.svg" alt="seta para baixo" />

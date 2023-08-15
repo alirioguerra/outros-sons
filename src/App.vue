@@ -12,20 +12,36 @@ let activeUrl = ref('')
 
 const videos = [
   {
-    id: 1,
-    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1&fullscreen=1',
-    thumbnail: 'https://img.youtube.com/vi/TlWYgGyNnJo/hqdefault.jpg',
-    title: 'Título Video 1',
+    id: 3,
+    url: 'https://www.youtube.com/embed/N6b7i8oQC3g?autoplay=1&fullscreen=1',
+    thumbnail: 'https://img.youtube.com/vi/N6b7i8oQC3g/hqdefault.jpg',
+    title: 'Acessibilidade Surda - Cultura',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.'
+      'Neste episódio você vai conhecer as vivências da artista Cecília Lima e da estudante de cinema Beatriz Cruz nos espaços culturais de Brasília, elas expõem as dificuldades de acesso às obras e produtos artísticos para pessoas surdas e com deficiência auditiva. Ainda nesse bloco, Cecília Lima comenta sobre a exposição em conjunto com a artista e professora da Universidade de Brasília (UnB), Iracema Barbosa.'
+  },
+  {
+    id: 3,
+    url: 'https://www.youtube.com/embed/c0akPkne0EQ?autoplay=1&fullscreen=1',
+    thumbnail: 'https://img.youtube.com/vi/c0akPkne0EQ/hqdefault.jpg',
+    title: 'Acessibilidade Surda - Educação',
+    description:
+      'No episódio de Educação, a coordenadora da Escola Bilíngue de Taguatinga -DF, Adriana Gomes, expõe as dificuldades enfrentadas pelos surdos no processo de aprendizagem devido à falta de acessibilidade no ensino brasileiro. O episódio também apresenta a relação construída entre a professora ouvinte de artes da Escola Bilíngue de Taguatinga - DF, Rosa Pires, com o aluno surdo de altas habilidades em desenho, Kauan de Sousa.'
+  },
+  {
+    id: 1,
+    url: 'https://www.youtube.com/embed/sm3uUk8dCko?autoplay=1&fullscreen=1',
+    thumbnail: 'https://img.youtube.com/vi/sm3uUk8dCko/hqdefault.jpg',
+    title: 'Acessibilidade Surda - Esporte',
+    description:
+      'Neste episódio, a surdo atleta, duas vezes bronze no Campeonato Mundial de Handebol de Surdos e assessora de projetos da Federação Brasiliense Desportiva dos Surdos (FBDS), Déborah Dias, compartilha as suas experiências, expõe as carências públicas da área e opina sobre a importância social do esporte para os surdos e deficientes auditivos.'
   },
   {
     id: 2,
-    url: 'https://www.youtube.com/embed/TlWYgGyNnJo?autoplay=1&fullscreen=1',
-    thumbnail: 'https://img.youtube.com/vi/TlWYgGyNnJo/hqdefault.jpg',
-    title: 'Título Video 2',
+    url: 'https://www.youtube.com/embed/gKsfgCkd4OE?autoplay=1&fullscreen=1',
+    thumbnail: 'https://img.youtube.com/vi/gKsfgCkd4OE/hqdefault.jpg',
+    title: 'Acessibilidade surda - Saúde',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.'
+      'No episódio de saúde, a psicóloga Luma Gaudad explica a importância da inclusão e acessibilidade na saúde, principalmente na área da psicologia. Ainda neste bloco, o assistente de pesquisa clínica, Kenzo Watanabe, conta a sua experiência na área profissional e a importância da implementação da libras nas faculdades de saúde.'
   }
 ]
 
@@ -54,6 +70,7 @@ onMounted(() => {
       <div class="desktop-text">
         <h2>{{ video.title }}</h2>
         <p>{{ video.description }}</p>
+        <a href="#">link útil</a>
       </div>
       <VideoView @open-modal="toggleModal(video.url)" v-bind="{ ...video }" />
     </div>
@@ -117,8 +134,8 @@ body:not(.fp-viewing-0) {
 
     p {
       max-width: rem-calc(550);
-      font-size: rem-calc(18);
-      line-height: rem-calc(28);
+      font-size: rem-calc(14);
+      line-height: rem-calc(14);
       font-weight: 400;
       color: $color-blue;
     }

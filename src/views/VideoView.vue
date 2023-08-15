@@ -44,7 +44,7 @@ defineEmits(['openModal'])
       height: 100%;
 
       background-color: #282727;
-      opacity: 0.5;
+      opacity: 0.7;
       z-index: 1;
     }
 
@@ -80,6 +80,7 @@ defineEmits(['openModal'])
     padding: 30px;
     transform: translateY(50%);
     z-index: 2;
+    max-width: rem-calc(550);
 
     @media only screen and (max-width: 768px) {
       display: none;
@@ -88,7 +89,7 @@ defineEmits(['openModal'])
     h2 {
       opacity: 0;
       transform: translate3d(0, 50px, 0);
-      font-size: rem-calc(62);
+      font-size: rem-calc(50);
       font-weight: 700;
       color: $color-orange;
       margin-bottom: rem-calc(70);
@@ -97,7 +98,6 @@ defineEmits(['openModal'])
     p {
       opacity: 0;
       transform: translate3d(0, 50px, 0);
-      max-width: rem-calc(550);
       font-size: rem-calc(18);
       line-height: rem-calc(28);
       font-weight: 400;
