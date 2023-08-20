@@ -9,6 +9,7 @@ import 'fullpage.js/dist/fullpage.css'
 
 let modal = ref(false)
 let activeUrl = ref('')
+let activeRelatedLinks = ref([])
 
 const videos = [
   {
@@ -17,7 +18,24 @@ const videos = [
     thumbnail: 'https://img.youtube.com/vi/N6b7i8oQC3g/hqdefault.jpg',
     title: 'Acessibilidade Surda - Cultura',
     description:
-      'Neste episódio você vai conhecer as vivências da artista Cecília Lima e da estudante de cinema Beatriz Cruz nos espaços culturais de Brasília, elas expõem as dificuldades de acesso às obras e produtos artísticos para pessoas surdas e com deficiência auditiva. Ainda nesse bloco, Cecília Lima comenta sobre a exposição em conjunto com a artista e professora da Universidade de Brasília (UnB), Iracema Barbosa.'
+      'Neste episódio você vai conhecer as vivências da artista Cecília Lima e da estudante de cinema Beatriz Cruz nos espaços culturais de Brasília, elas expõem as dificuldades de acesso às obras e produtos artísticos para pessoas surdas e com deficiência auditiva. Ainda nesse bloco, Cecília Lima comenta sobre a exposição em conjunto com a artista e professora da Universidade de Brasília (UnB), Iracema Barbosa.',
+    relatedLinks: [
+      {
+        id: 1,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 2,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 3,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      }
+    ]
   },
   {
     id: 3,
@@ -25,7 +43,24 @@ const videos = [
     thumbnail: 'https://img.youtube.com/vi/c0akPkne0EQ/hqdefault.jpg',
     title: 'Acessibilidade Surda - Educação',
     description:
-      'No episódio de Educação, a coordenadora da Escola Bilíngue de Taguatinga -DF, Adriana Gomes, expõe as dificuldades enfrentadas pelos surdos no processo de aprendizagem devido à falta de acessibilidade no ensino brasileiro. O episódio também apresenta a relação construída entre a professora ouvinte de artes da Escola Bilíngue de Taguatinga - DF, Rosa Pires, com o aluno surdo de altas habilidades em desenho, Kauan de Sousa.'
+      'No episódio de Educação, a coordenadora da Escola Bilíngue de Taguatinga -DF, Adriana Gomes, expõe as dificuldades enfrentadas pelos surdos no processo de aprendizagem devido à falta de acessibilidade no ensino brasileiro. O episódio também apresenta a relação construída entre a professora ouvinte de artes da Escola Bilíngue de Taguatinga - DF, Rosa Pires, com o aluno surdo de altas habilidades em desenho, Kauan de Sousa.',
+    relatedLinks: [
+      {
+        id: 1,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 2,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 3,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      }
+    ]
   },
   {
     id: 1,
@@ -33,7 +68,24 @@ const videos = [
     thumbnail: 'https://img.youtube.com/vi/sm3uUk8dCko/hqdefault.jpg',
     title: 'Acessibilidade Surda - Esporte',
     description:
-      'Neste episódio, a surdo atleta, duas vezes bronze no Campeonato Mundial de Handebol de Surdos e assessora de projetos da Federação Brasiliense Desportiva dos Surdos (FBDS), Déborah Dias, compartilha as suas experiências, expõe as carências públicas da área e opina sobre a importância social do esporte para os surdos e deficientes auditivos.'
+      'Neste episódio, a surdo atleta, duas vezes bronze no Campeonato Mundial de Handebol de Surdos e assessora de projetos da Federação Brasiliense Desportiva dos Surdos (FBDS), Déborah Dias, compartilha as suas experiências, expõe as carências públicas da área e opina sobre a importância social do esporte para os surdos e deficientes auditivos.',
+    relatedLinks: [
+      {
+        id: 1,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 2,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 3,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      }
+    ]
   },
   {
     id: 2,
@@ -41,13 +93,32 @@ const videos = [
     thumbnail: 'https://img.youtube.com/vi/gKsfgCkd4OE/hqdefault.jpg',
     title: 'Acessibilidade surda - Saúde',
     description:
-      'No episódio de saúde, a psicóloga Luma Gaudad explica a importância da inclusão e acessibilidade na saúde, principalmente na área da psicologia. Ainda neste bloco, o assistente de pesquisa clínica, Kenzo Watanabe, conta a sua experiência na área profissional e a importância da implementação da libras nas faculdades de saúde.'
+      'No episódio de saúde, a psicóloga Luma Gaudad explica a importância da inclusão e acessibilidade na saúde, principalmente na área da psicologia. Ainda neste bloco, o assistente de pesquisa clínica, Kenzo Watanabe, conta a sua experiência na área profissional e a importância da implementação da libras nas faculdades de saúde.',
+    relatedLinks: [
+      {
+        id: 1,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 2,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      },
+      {
+        id: 3,
+        url: 'https://www.youtube.com/watch?v=Z2Q7Xh6ZJMc',
+        title: 'Exposição de Cecília Lima e Iracema Barbosa'
+      }
+    ]
   }
 ]
 
-function toggleModal(url) {
+function toggleModal({ relatedLinks, url }) {
   activeUrl.value = url
+  activeRelatedLinks.value = relatedLinks
   modal.value = !modal.value
+  document.body.classList.toggle('no-scroll')
 }
 
 onMounted(() => {
@@ -70,12 +141,17 @@ onMounted(() => {
       <div class="desktop-text">
         <h2>{{ video.title }}</h2>
         <p>{{ video.description }}</p>
-        <a href="#">link útil</a>
       </div>
-      <VideoView @open-modal="toggleModal(video.url)" v-bind="{ ...video }" />
+      <VideoView @open-modal="toggleModal(video)" v-bind="{ ...video }" />
     </div>
   </main>
-  <video-modal v-if="modal" @close="toggleModal(null)" :active="modal" :url="activeUrl" />
+  <video-modal
+    v-if="modal"
+    @close="toggleModal({ relatedLinks: [], url: '' })"
+    :related-links="activeRelatedLinks"
+    :active="modal"
+    :url="activeUrl"
+  />
 </template>
 
 <style lang="scss">
@@ -113,6 +189,7 @@ body:not(.fp-viewing-0) {
 #fp-nav.fp-right {
   right: 0;
 }
+
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background-color: $color-darken-orange;
