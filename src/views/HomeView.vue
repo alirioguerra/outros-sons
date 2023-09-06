@@ -43,6 +43,8 @@
 
     .image {
       flex: 1;
+      max-width: 640px;
+      overflow: hidden;
 
       img {
         mix-blend-mode: darken;
@@ -85,7 +87,7 @@
 
         p {
           font-size: 18px;
-          line-height: 22px;
+          line-height: 24px;
           color: $color-blue;
 
           @media only screen and (max-width: 768px) {

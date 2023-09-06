@@ -14,7 +14,7 @@ defineEmits(['openModal'])
   <div class="video-container">
     <div class="text-content">
       <h2>{{ props.title }}</h2>
-      <p>{{ props.description }}</p>
+      <p v-html="props.description"></p>
     </div>
     <div class="video-wrapper">
       <a @click.prevent="$emit('openModal')" class="play-button" href="#">
@@ -25,7 +25,7 @@ defineEmits(['openModal'])
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .video-container {
   position: relative;
   overflow: hidden;
@@ -102,6 +102,11 @@ defineEmits(['openModal'])
       line-height: rem-calc(28);
       font-weight: 400;
       color: $color-background;
+
+      a.text-link {
+        color: $color-background;
+        font-weight: 700;
+      }
     }
   }
 }
